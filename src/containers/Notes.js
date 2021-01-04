@@ -10,7 +10,7 @@ import { s3Upload } from "../libs/awsLib";
 
 export default function Notes() {
   const file = useRef(null);
-  const { id } = useParams();
+  const {id} = useParams();
   const history = useHistory();
   const [note, setNote] = useState(null);
   const [content, setContent] = useState("");
@@ -19,7 +19,8 @@ export default function Notes() {
 
   useEffect(() => {
     function loadNote() {
-      return API.get("notes", `/notes/${id}`);
+      	//console.log(`${id}`);
+	return API.get("notes", `/notes/${id}`);
     }
 
     async function onLoad() {
